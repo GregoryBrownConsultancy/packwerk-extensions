@@ -24,7 +24,7 @@ module Packwerk
 
       sig { returns(T::Boolean) }
       def layers_key_configured?
-        @layers_key_configured ||= YAML.load_file('packwerk.yml')['architecture_layers'].nil?
+        @layers_key_configured ||= YAML.load_file('packwerk.yml')['architecture_layers']&.nil?
       end
 
       sig { returns(String) }
